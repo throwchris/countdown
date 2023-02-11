@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>⏰ CountDown</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<link rel="stylesheet" href="styles.css">
+<style>
+p {
+  text-align: center;
+  font-size: 8vh;
+  margin-top: 0px;
+}
+
+body {
+ 
+ background-image: url("train.jpg");
+ background-size: cover;
+
+}
+</style>
+</head>
+<body>
+
+  <div class="w3-container w3-padding-64">
+ <p class="text-align: center; font-effect-fire glow w3-mobile">March 22, 2023</p> 
+<p id="demo" class="font-effect-fire glow w3-mobile"></p>
+<p class="font-effect-fire glow2 w3-mobile">1 Corinthians 2:9 But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, 
+  the things which God hath prepared for them that love him. "</p>
+</div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 22, 2023 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
